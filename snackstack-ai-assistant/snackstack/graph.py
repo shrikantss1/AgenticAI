@@ -41,20 +41,20 @@ def build_graph():
 snackstack_graph = build_graph()
 
 # TESTING
-import uuid
-thread_id = uuid.uuid4().hex
-config = {"configurable": {"thread_id": thread_id}}
+# import uuid
+# thread_id = uuid.uuid4().hex
+# config = {"configurable": {"thread_id": thread_id}}
 
-result = snackstack_graph.invoke({
-    "user_query": "What is the status of my order"
-}, config)
+# result = snackstack_graph.invoke({
+#     "user_query": "What is the status of my order"
+# }, config)
 
-print(f"------- State: {snackstack_graph.get_state(config).interrupts}")
-for task in snackstack_graph.get_state(config).tasks:
-    if task.interrupts:
-        print(f"------------- Interrupted Task----------------")
-        for interrupt_info in task.interrupts:
-            print(f"Interrupt Prompt: {interrupt_info.value}")
+# print(f"------- State: {snackstack_graph.get_state(config).interrupts}")
+# for task in snackstack_graph.get_state(config).tasks:
+#     if task.interrupts:
+#         print(f"------------- Interrupted Task----------------")
+#         for interrupt_info in task.interrupts:
+#             print(f"Interrupt Prompt: {interrupt_info.value}")
         
 
 # logger.info(result['final_answer'])
